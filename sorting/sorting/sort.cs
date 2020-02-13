@@ -74,5 +74,27 @@ namespace sorting
 
             return sorted;
         }
+        public int[] insertionSort(int[] toSort)
+        {
+            //Сортировка вставками
+
+            int[] sorted = new int[toSort.Length];
+            Array.Copy(toSort, sorted, toSort.Length);//Создаём копию исходного массива
+
+
+            for (int i = 1; i < sorted.Length; i++)
+            {
+                int key = sorted[i];    //Берём значение начиная со второго элемента в массиве
+                int j = i--;            //Берём индекс предыдущего
+                while(j>=0 && sorted[j]>key) //Пока не проверим весь отрезок от начала до sorted[i]
+                {
+                    sorted[j + 1] = sorted[j]; //Если предыдущий элемент больше, смещаем его правее
+                    j--;                       //Идём к следующему (смещаемся влево)
+                }
+                sorted[j + 1] = key;    //Ставим рассматриваемое значение на место по возрастанию
+            }
+
+            return sorted;
+        }
     }
 }
