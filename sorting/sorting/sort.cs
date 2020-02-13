@@ -56,12 +56,12 @@ namespace sorting
             while (step > 0)
             {
                 int i, j;
-                for (i = step; i < sorted.Length; i++)
+                for (i = step; i < sorted.Length; i++) //идем по массиву с шагом step
                 {
                     int value = sorted[i];   //Принимаем за минимальное
-                    for (j = i - step; j >= 0 && sorted[j] > value; j -= step)   //циклом проходим по промежутку от i до step,
-                                                                                 //если есть меньшее значение - двигаем его влево
-                                                                                 //если нет - оставим его на месте
+                    for (j = i - step; j >= 0 && sorted[j] > value; j -= step)   //Сравниваем все элементы массива с шагом step
+                                                                                 //Если первый на промежутке меньше минимального(value), сдвигаем его влево
+                                                                                 //Если оно больше - идём к следующему
                     {
                         sorted[j + step] = sorted[j];
                     }
