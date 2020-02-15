@@ -8,7 +8,9 @@
 * D.Shell sort method
 * Insertion sort method
 * Selection sort method
-### toDo: ###
 * Bubble sort method
 * Merge sort method
 * Quick sort method
+
+### toDo: ###
+?
